@@ -62,6 +62,14 @@ parts:
       unset LD_LIBRARY_PATH;
       snapcraftctl set-version "$(/bin/date +%Y%m%d)"
       snapcraftctl pull
+    override-build: |
+      snapcraftctl build
+      # disable console-conf and cloud-init
+      ln -sf /dev/null ${SNAPCRAFT_PART_INSTALL}/lib/systemd/system/cloud-config.service
+      ln -sf /dev/null ${SNAPCRAFT_PART_INSTALL}/lib/systemd/system/cloud-final.service
+      ln -sf /dev/null ${SNAPCRAFT_PART_INSTALL}/lib/systemd/system/cloud-init-local.service
+      ln -sf /dev/null ${SNAPCRAFT_PART_INSTALL}/lib/systemd/system/cloud-init.service
+      ln -sf /dev/null ${SNAPCRAFT_PART_INSTALL}/lib/systemd/system/console-conf@.service
     override-stage: |
       unset LD_LIBRARY_PATH;
       export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
