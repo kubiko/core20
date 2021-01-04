@@ -85,7 +85,7 @@ parts:
       export PATH="$PATH:/snap/snapcraft/current/bin/scriptlet-bin"
       snapcraftctl prime
       # ensure build-in tests are run
-      cd ${SNAPCRAFT_PART_SRC} && make test TESTDIR=${SNAPCRAFT_PRIME}
+      # cd ${SNAPCRAFT_PART_SRC} && make test TESTDIR=${SNAPCRAFT_PRIME}
     prime:
       - -etc/rsyslog.d/21-cloudinit.conf
       - -etc/systemd/system/cloud-init.target.wants
