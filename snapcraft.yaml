@@ -86,3 +86,46 @@ parts:
       snapcraftctl prime
       # ensure build-in tests are run
       cd ${SNAPCRAFT_PART_SRC} && make test TESTDIR=${SNAPCRAFT_PRIME}
+    prime:
+      - -etc/rsyslog.d/21-cloudinit.conf
+      - -etc/systemd/system/cloud-init.target.wants
+      - -lib/systemd/system/cloud-final.service.wants
+      - -lib/systemd/system/multi-user.target.wants/swapfile.service
+      - -lib/systemd/system/swapfile.service
+      - -lib/systemd/system-generators/cloud-init-generator
+      - -lib/udev/hwdb.d
+      - -usr/bin/cloud-init*
+      - -usr/bin/console-conf
+      - -usr/bin/pdb3*
+      - -usr/bin/perl*
+      - -usr/bin/py*
+      - -usr/lib/cloud-init
+      - -usr/lib/initramfs-tools
+      - -usr/lib/*/perl
+      - -usr/lib/*/perl-base
+      - -usr/lib/*/python*
+      - -usr/lib/python*
+      - -usr/lib/valgrind
+      - -usr/sbin/netplan
+      - -usr/share/applications/python*
+      - -usr/share/apport/package-hooks/cloud-init.py
+      - -usr/share/bash-completion/completions/cloud-init
+      - -usr/share/bash-completion/completions/micropython
+      - -usr/share/bash-completion/completions/perl*
+      - -usr/share/bash-completion/completions/py*
+      - -usr/share/bash-completion/helpers/perl*
+      - -usr/share/bash-completion/helpers/python*
+      - -usr/share/binfmts/python*
+      - -usr/share/doc
+      - -usr/share/doc-base
+      - -usr/share/gcc-*
+      - -usr/share/initramfs-tools
+      - -usr/share/keyrings/ubuntu-cloudimage*
+      - -usr/share/lintian
+      - -usr/share/man
+      - -usr/share/perl*
+      - -usr/share/pixmaps/python*
+      - -usr/share/python*
+      - -usr/share/subiquity
+      - -var/lib/python*
+      - -var/lib/systemd/deb-systemd-helper-enabled/cloud-*
