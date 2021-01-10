@@ -49,6 +49,8 @@ parts:
       snapcraftctl prime
       # ensure build-in tests are run
       # cd ${SNAPCRAFT_PART_SRC} && make test TESTDIR=${SNAPCRAFT_PRIME}
+      # replace etc/fw_env.config with sym-link, so it can be defined by gadget
+      ln -sf /boot/uboot/fw_env.config ${SNAPCRAFT_PRIME}/etc/fw_env.config
     prime:
       - -etc/rsyslog.d/21-cloudinit.conf
       - -etc/systemd/system/cloud-init.target.wants
