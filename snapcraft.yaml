@@ -94,3 +94,9 @@ parts:
       - -usr/share/subiquity
       - -var/lib/python*
       - -var/lib/systemd/deb-systemd-helper-enabled/cloud-*
+  u-boot-tools:
+    plugin: nil
+    stage-packages:
+      - u-boot-tools
+    stage:
+      - usr/bin/fw_*
