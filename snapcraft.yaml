@@ -100,3 +100,11 @@ parts:
       - u-boot-tools
     stage:
       - usr/bin/fw_*
+
+  # xdelta is used to enable delta downloads
+  xdelta3:
+    plugin: nil
+    stage-packages:
+      - xdelta3
+    stage:
+      - usr/bin/xdelta3
