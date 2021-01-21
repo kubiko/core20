@@ -142,3 +142,10 @@ parts:
       - usr/bin/jq
       - usr/lib/*/libjq*
       - usr/lib/*/libonig*
+
+  column:
+    plugin: nil
+    stage-packages:
+      - bsdmainutils
+    stage:
+      - usr/bin/column
