@@ -132,3 +132,13 @@ parts:
       - usr/lib/*/libwind*
       - usr/lib/*/libheimbase*
       - usr/lib/*/libhx509*
+
+  jq:
+    plugin: nil
+    stage-packages:
+      - jq
+      - libjq1
+    stage:
+      - usr/bin/jq
+      - usr/lib/*/libjq*
+      - usr/lib/*/libonig*
