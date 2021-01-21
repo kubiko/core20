@@ -108,3 +108,27 @@ parts:
       - xdelta3
     stage:
       - usr/bin/xdelta3
+
+  curl:
+    plugin: nil
+    stage-packages:
+      - curl
+      - libcurl4
+    stage:
+      - usr/bin/curl
+      - usr/lib/*/libcurl*
+      - usr/lib/*/libgssapi*
+      - usr/lib/*/libheimntlm*
+      - usr/lib/*/libkrb5*
+      - usr/lib/*/libasn1*
+      - usr/lib/*/libhcrypto*
+      - usr/lib/*/libroken*
+      - usr/lib/*/libnghttp2*
+      - usr/lib/*/librtmp*
+      - usr/lib/*/libsasl2*
+      - usr/lib/*/libpsl*
+      - usr/lib/*/libldap_r*
+      - usr/lib/*/liblber*
+      - usr/lib/*/libwind*
+      - usr/lib/*/libheimbase*
+      - usr/lib/*/libhx509*
